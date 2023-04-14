@@ -2,26 +2,27 @@ package pro.sky.java.course2.calculator.service;
 
 
 import org.springframework.stereotype.Service;
+import pro.sky.java.course2.calculator.CalculatorServiceInterface;
 
 @Service
-public class CalculatorService{
-    public static String showHelloWorld() {
+public class CalculatorService implements CalculatorServiceInterface {
+    public String showHelloWorld() {
         return "Добро пожаловать в калькулятор";
     }
 
-    public static String plusСalculator(int getNum1, int getNum2) {
+    public String plusСalculator(int getNum1, int getNum2) {
         int result = getNum1 + getNum2;
         return getNum1 + " + "+ getNum2 + " = "+ result;
     }
-    public static String minusСalculator(int getNum1, int getNum2) {
+    public String minusСalculator(int getNum1, int getNum2) {
         int result = getNum1 - getNum2;
         return getNum1 + " - "+ getNum2 + " = "+ result;
     }
-    public static String multiplyСalculator(int getNum1, int getNum2) {
+    public String multiplyСalculator(int getNum1, int getNum2) {
         int result = getNum1 * getNum2;
         return getNum1 + " * "+ getNum2 + " = "+ result;
     }
-    public static String divideСalculator(int getNum1, int getNum2) {
+    public String divideСalculator(int getNum1, int getNum2) {
         int result = getNum1 / getNum2;
         return getNum1 + " / "+ getNum2 + " = "+ result;
     }
