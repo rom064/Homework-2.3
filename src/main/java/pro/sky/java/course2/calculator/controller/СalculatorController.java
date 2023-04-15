@@ -11,7 +11,8 @@ import pro.sky.java.course2.calculator.service.CalculatorService;
 @RequestMapping("/calculator")
 public class СalculatorController {
     private final CalculatorServiceInterface calculatorService;
-    public СalculatorController (CalculatorServiceInterface calculatorService) {
+
+    public СalculatorController(CalculatorServiceInterface calculatorService) {
         this.calculatorService = calculatorService;
     }
 
@@ -22,20 +23,36 @@ public class СalculatorController {
 
     @GetMapping("/plus")
     public String plusСalculator(@RequestParam("num1") int getNum1, @RequestParam("num2") int getNum2) {
-        return calculatorService.plusСalculator(getNum1,getNum2);
+        calculatorService.plusСalculator(getNum1, getNum2);
+        int result = getNum1 + getNum2;
+        return getNum1 + " + " + getNum2 + " = " + result;
     }
+
     @GetMapping("/minus")
     public String minusСalculator(@RequestParam("num1") int getNum1, @RequestParam("num2") int getNum2) {
-        return calculatorService.minusСalculator(getNum1,getNum2);
+        calculatorService.minusСalculator(getNum1, getNum2);
+        int result = getNum1 - getNum2;
+        return getNum1 + " - " + getNum2 + " = " + result;
+
     }
+
     @GetMapping("/multiply")
     public String multiplyСalculator(@RequestParam("num1") int getNum1, @RequestParam("num2") int getNum2) {
-        return calculatorService.multiplyСalculator(getNum1,getNum2);
+        calculatorService.multiplyСalculator(getNum1, getNum2);
+        int result = getNum1 * getNum2;
+        return getNum1 + " * " + getNum2 + " = " + result;
     }
+
     @GetMapping("/divide")
     public String divideСalculator(@RequestParam("num1") int getNum1, @RequestParam("num2") int getNum2) {
-        return calculatorService.divideСalculator(getNum1,getNum2);
+        calculatorService.divideСalculator(getNum1, getNum2);
+        if (getNum2 == 0) {
+            return "Делить на 0 нельзя";
+        }
+        double result = (double) getNum1 / getNum2;
+        return getNum1 + " / " + getNum2 + " = " + result;
     }
-
-
 }
+
+
+
