@@ -6,24 +6,23 @@ import pro.sky.java.course2.calculator.CalculatorServiceInterface;
 
 @Service
 public class CalculatorService implements CalculatorServiceInterface {
-    public String showHelloWorld() {
-        return "Добро пожаловать в калькулятор";
+    @Override
+    public String plusСalculator(int num1, int num2) {
+        return String.valueOf((num1 + num2));
     }
 
-    public String plusСalculator(int getNum1, int getNum2) {
-        return null;
+    @Override
+    public String minusСalculator(int num1, int num2) {
+        return String.valueOf(num1 - num2);
     }
 
-    public String minusСalculator(int getNum1, int getNum2) {
-        return null;
+    @Override
+    public String multiplyСalculator(int num1, int num2) {
+        return String.valueOf(num1 * num2);
     }
 
-    public String multiplyСalculator(int getNum1, int getNum2) {
-        return null;
+    @Override
+    public String divideСalculator(int num1, int num2) {
+        return String.valueOf((double) num1 / num2);
     }
-
-    public String divideСalculator(int getNum1, int getNum2) {
-        return null;
-    }
-
 }
